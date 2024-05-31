@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --red: rgb(67, 56, 202);
+}
+
+::-moz-selection { /* Code for Firefox */
+  color: white;
+  background: var(--red);
+}
+
+::selection {
+  color: white;
+  background: var(--red);
+}
