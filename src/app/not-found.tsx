@@ -1,26 +1,32 @@
 import Link from 'next/link'
 
-import { Button } from '@/components/Button'
-import { Logo } from '@/components/Logo'
-import { SlimLayout } from '@/components/SlimLayout'
+import { SlimLayout } from '@/components/slim-layout'
+import { Button } from '@/components/ui/button'
+import { LogoLightTheme } from '@/components/svg/logo-light-theme'
+// import { handleOnBoarding } from './onboarding/actions'
 
 export default function NotFound() {
+  // await handleOnBoarding()
+
   return (
     <SlimLayout>
       <div className="flex">
         <Link href="/" aria-label="Home">
-          <Logo className="h-10 w-auto" />
+          <LogoLightTheme className='size-40' />
         </Link>
       </div>
       <p className="mt-20 text-sm font-medium text-gray-700">404</p>
       <h1 className="mt-3 text-lg font-semibold text-gray-900">
-        Page not found
+        Página não encontrada
       </h1>
       <p className="mt-3 text-sm text-gray-700">
-        Sorry, we couldn’t find the page you’re looking for.
+        Lamentamos, mas não conseguimos encontrar essa página.
+        Desculpe, não foi possível encontrar a página que você procura.
       </p>
-      <Button href="/" className="mt-10">
-        Go back home
+      <Button variant="home" asChild className="mt-10">
+        <Link href="/">
+          Voltar
+        </Link>
       </Button>
     </SlimLayout>
   )

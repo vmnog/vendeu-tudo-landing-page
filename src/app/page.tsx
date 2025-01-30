@@ -1,12 +1,9 @@
-import { CallToAction } from '@/components/CallToAction'
-import { Faqs } from '@/components/Faqs'
-import { Footer } from '@/components/Footer'
-import { Header } from '@/components/Header'
-import { Hero } from '@/components/Hero'
-import { Pricing } from '@/components/Pricing'
-import { PrimaryFeatures } from '@/components/PrimaryFeatures'
-import { SecondaryFeatures } from '@/components/SecondaryFeatures'
-import { Testimonials } from '@/components/Testimonials'
+import { Faqs } from "@/components/faqs";
+import { Footer } from "@/components/footer";
+import { Header } from "@/components/header";
+import { Hero } from "@/components/hero";
+import { Pricing } from "@/components/pricing";
+import { PrimaryFeatures } from "@/components/primary-features";
 
 export default function Home() {
   return (
@@ -15,9 +12,6 @@ export default function Home() {
       <main>
         <Hero />
         <PrimaryFeatures />
-        <SecondaryFeatures />
-        <CallToAction />
-        <Testimonials />
         <Pricing />
         <Faqs />
       </main>

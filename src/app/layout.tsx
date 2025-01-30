@@ -3,10 +3,12 @@ import { Inter, Lexend } from 'next/font/google'
 import clsx from 'clsx'
 
 import '@/styles/tailwind.css'
+import { Providers } from '@/components/providers'
+import { Suspense } from 'react'
 
 export const metadata: Metadata = {
   title: {
-    template: '%s - Vendeu Tudo',
+    template: '%s | Vendeu Tudo',
     default: 'Vendeu Tudo - Sincronize seu Instagram com sua Loja Virtual',
   },
   description:
@@ -32,14 +34,21 @@ export default function RootLayout({
 }) {
   return (
     <html
+      suppressHydrationWarning
       lang="pt-BR"
       className={clsx(
-        'h-full scroll-smooth bg-white antialiased',
+        'h-full scroll-smooth antialiased bg-background',
         inter.variable,
         lexend.variable,
       )}
     >
-      <body className="flex h-full flex-col">{children}</body>
+      <body className="flex h-full flex-col">
+        <Providers>
+          <Suspense fallback="Carregando...">
+            {children}
+          </Suspense>
+        </Providers>
+      </body>
     </html>
   )
 }
